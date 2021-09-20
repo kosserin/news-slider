@@ -1,0 +1,159 @@
+@import "./styles/colors";
+@import "./styles/media-queries";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  background: $brown;
+}
+
+main {
+  width: 70%;
+  min-height: 100vh;
+  margin: 10px auto;
+  position: relative;
+  padding: 5px 0;
+
+  @include phone {
+    width: 80%;
+  }
+}
+main .text {
+  padding: 10px;
+  text-align: center;
+}
+.text h1 {
+  font-size: 4rem;
+  color: $black;
+}
+main header {
+  width: 98%;
+  height: 60px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header p span {
+  font-size: 3rem;
+  padding: 0 1rem;
+  margin: 0 5px;
+  cursor: pointer;
+  color: $red;
+  display: inline-block;
+  text-align: center;
+  border-radius: 3px;
+  transition: all 250ms ease;
+
+  @include phone {
+    font-size: 5rem;
+  }
+}
+header p span:hover {
+  color: $black;
+}
+section {
+  width: 98%;
+  height: 600px;
+  /*background: red;*/
+  margin: 0 auto 50px auto;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+section::-webkit-scrollbar {
+  display: none;
+}
+section .product {
+  min-width: 32.6%;
+  min-height: 500px;
+  box-shadow: 1px 1px 5px rgba($color: $black, $alpha: 0.1);
+  margin: 0 20px 0 0;
+  position: relative;
+  left: 0;
+  transition: 0.5s;
+
+  @include laptop {
+    min-width: 49%;
+  }
+
+  @include phone {
+    min-width: 100% !important;
+    margin: 0 !important;
+  }
+}
+picture {
+  width: 100%;
+  height: 300px;
+  /*background: green;*/
+  display: flex;
+  object-fit: cover;
+  overflow: hidden;
+  margin-bottom: 20px;
+
+  @include phone {
+    height: 200px;
+  }
+}
+picture img {
+  width: 100%;
+}
+
+h2,
+p {
+  margin: 0 1rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+
+  @include phone {
+    font-size: 1.1rem;
+    margin-top: 5px;
+  }
+}
+
+p {
+  @include phone {
+    font-size: 0.9rem;
+  }
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  color: $black;
+  border-bottom: 1px solid $black;
+  margin-top: 15px;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+}
+
+.date {
+  padding-left: 1rem;
+
+  i {
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .text h1 {
+    font-size: 35px;
+  }
+  .text p {
+    width: 90%;
+  }
+  section .product {
+    min-width: 49%;
+    margin: 0 10px 0 0;
+  }
+}
